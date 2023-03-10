@@ -1,18 +1,22 @@
-function Character() {
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const Character = ({ family, fullName, imageUrl, title }) => {
     return (
-        <div data-test="component-character">
-             <h1 data-test="char-name">{ props.name }</h1>
-             <img src={"props.imgUrl"} data-test="char-img"></img>
-             <ul data-test="char-list">
-                <li data-test="char-birth">Date of Birth: { props.birth }</li>
-                <li data-test="char-death">Date of Death: { props.death }</li>
-                <li data-test="char-race">Race: { props.race }</li>
-                <li data-test="char-realm">Realm: { props.realm }</li>
-                <li data-test="char-spouse">Spouse: { props.realm }</li>
-             </ul>
-        </div >
-   
-        )
+        <div data-test='character-card' className="card-container">
+            <img data-test='character-image' src={imageUrl} alt={fullName} />
+            <div data-test='character-body' className="card-body">
+                <h1 data-test='character-content'>{title} {fullName} of {family}</h1>
+            </div>
+        </div>
+    );
+};
+
+Character.propTypes = {
+    family: PropTypes.string,
+    fullName: PropTypes.string,
+    imageUrl: PropTypes.string,
+    title: PropTypes.string,
 }
 
 export default Character;

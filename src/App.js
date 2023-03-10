@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import CharacterGallery from './components/CharacterGallery';
+import React from 'react'
+import CharacterGallery from './components/CharacterGallery'
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App" data-test="component-app">
+    <div data-test='app-container'>
+      <h1 className="site-title" data-test='site-title'>A Song of Fire and Ice</h1>
       <CharacterGallery />
-    </div>  
-  )
+    </div>
+  );
 };
 
 export default App;
